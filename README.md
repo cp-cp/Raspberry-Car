@@ -1,6 +1,6 @@
 # raspberry_car
 
-![img](README.assets/1X$MHL2647T[CKUF_4%U[W.jpg)
+![img](README.assets/1X%24MHL2647T%5BCKUF_4%25U%5BW.jpg)
 
 ### GPIO 连接
 
