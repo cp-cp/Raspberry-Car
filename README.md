@@ -1,6 +1,6 @@
 # raspberry_car
 
-![img](C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\1X$MHL2647T[CKUF_4%U[W.jpg)
+![img](README.assets/1X$MHL2647T[CKUF_4%U[W.jpg)
 
 ### GPIO 连接
 
@@ -54,13 +54,13 @@
 
 #### VSCode ssh连接
 
-<img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230511001142265.png" alt="image-20230511001142265" style="zoom:50%;" />
+<img src="README.assets/image-20230511001142265.png" alt="image-20230511001142265" style="zoom:50%;" />
 
 ​	直接在vscode上进行代码编写，并且使用vscode的终端进行编译运行。
 
 #### VNC Viewer 连接
 
-![image-20230511001253902](C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230511001253902.png)
+![image-20230511001253902](README.assets/image-20230511001253902.png)
 
 直接连接树莓派的操作界面，直接写入树莓派内部。
 
@@ -68,7 +68,7 @@
 
 在shell中使用nano与vim编写代码
 
-<img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230511001405567.png" alt="image-20230511001405567" style="zoom:50%;" />
+<img src="README.assets/image-20230511001405567.png" alt="image-20230511001405567" style="zoom:50%;" />
 
 ### 已配备元器件：
 
@@ -103,7 +103,7 @@
   * 陀螺仪用来检测xyz轴旋转加速度
   * 【待升级】对加速度进行积分可以得出路径，涉及到相关的SLAM，但由于MPU6050精度太低，一般很少用来进行轨迹建图。
 
-  ![image-20230508001457999](C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230508001457999.png)
+  ![image-20230508001457999](README.assets/image-20230508001457999.png)
 
 ### 实现功能
 
@@ -119,42 +119,42 @@
 
   * 初始化
 
-    <img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230510233959989.png" alt="image-20230510233959989" style="zoom:50%;" />
+    <img src="README.assets/image-20230510233959989.png" alt="image-20230510233959989" style="zoom:50%;" />
 
-    <img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230510233925324.png" alt="image-20230510233925324" style="zoom:50%;" />
+    <img src="README.assets/image-20230510233925324.png" alt="image-20230510233925324" style="zoom:50%;" />
 
   * 采用四路寻迹
     * 中间两路用于定位黑线
 
     * 两侧两路用于调整方向
 
-      ![image-20230510234240303](C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230510234240303.png)
+      ![image-20230510234240303](README.assets/image-20230510234240303.png)
 
   * 黑线循迹设计了6种行驶函数
 
     * run()前进
 
-      <img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230510233222678.png" alt="image-20230510233222678" style="zoom:50%;" />
+      <img src="README.assets/image-20230510233222678.png" alt="image-20230510233222678" style="zoom:50%;" />
 
     * left()前进并左转
 
-      <img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230510233252907.png" alt="image-20230510233252907" style="zoom:50%;" />
+      <img src="README.assets/image-20230510233252907.png" alt="image-20230510233252907" style="zoom:50%;" />
 
     * right()前进并右转
 
-      <img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230510233655171.png" alt="image-20230510233655171" style="zoom:50%;" />
+      <img src="README.assets/image-20230510233655171.png" alt="image-20230510233655171" style="zoom:50%;" />
 
     * spin_left()原地左转
 
-      <img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230510233709547.png" alt="image-20230510233709547" style="zoom:50%;" />
+      <img src="README.assets/image-20230510233709547.png" alt="image-20230510233709547" style="zoom:50%;" />
 
     * spin_right()原地右转
 
-      <img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230510233732223.png" alt="image-20230510233732223" style="zoom:50%;" />
+      <img src="README.assets/image-20230510233732223.png" alt="image-20230510233732223" style="zoom:50%;" />
 
     * back()后退
 
-      <img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230510233804642.png" alt="image-20230510233804642" style="zoom:50%;" />
+      <img src="README.assets/image-20230510233804642.png" alt="image-20230510233804642" style="zoom:50%;" />
 
   * 其中每一个行驶函数都接收speed参数，用于pwm调速。
 
@@ -162,7 +162,7 @@
 
 * 超声波避障
 
-  <img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230510234356183.png" alt="image-20230510234356183" style="zoom:50%;" />
+  <img src="README.assets/image-20230510234356183.png" alt="image-20230510234356183" style="zoom:50%;" />
 
   * 测距功能：在遥控模式下，可以对当前距离进行测量。
   * 警告功能：在遥控模式下，在调用run()函数进行前进时候，如果距离测量为50cm，就停止前进，并通过蜂鸣器发出警告。
@@ -172,14 +172,14 @@
 
   * 采用motion进行监视，实时录像8081口
 
-  <img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230510235315323.png" alt="image-20230510235315323" style="zoom:50%;" />  n 
+  <img src="README.assets/image-20230510235315323.png" alt="image-20230510235315323" style="zoom:50%;" />  n 
 
 * 服务器遥控
 
   * 给树莓派安装了anaconda 3，通过写一个php文件，建立一个服务端口。
   * 同一个WiFi下的设备可以访问树莓派IP进行操控。
 
-  ![image-20230508003227721](C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230508003227721.png)
+  ![image-20230508003227721](README.assets/image-20230508003227721.png)
 
 * 加速度、旋转速度测量
 
@@ -193,11 +193,11 @@
   
   * 初始化蜂鸣器
   
-    <img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230511000008119.png" alt="image-20230511000008119" style="zoom:50%;" />
+    <img src="README.assets/image-20230511000008119.png" alt="image-20230511000008119" style="zoom:50%;" />
   
   * 编写歌曲
   
-    <img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230511000059773.png" alt="image-20230511000059773" style="zoom:50%;" />
+    <img src="README.assets/image-20230511000059773.png" alt="image-20230511000059773" style="zoom:50%;" />
   
   * 【视频】
   
@@ -206,18 +206,18 @@
 * 大力钻孔
 
   * 本次项目，体验了钻孔的艺术，由于原有的车体骨架打孔并不符合一些客制化需求，购置了新的亚克力板，并进行钻孔以进行组装。
-  * <img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230511000418825.png" alt="image-20230511000418825" style="zoom: 33%;" />
+  * <img src="README.assets/image-20230511000418825.png" alt="image-20230511000418825" style="zoom: 33%;" />
 
   * 本车外貌仿人的模样
     * 超声波模拟眼睛
     * 蜂鸣器模拟嘴巴
-    * 摄像头模拟天眼<img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230511000457926.png" alt="image-20230511000457926" style="zoom:50%;" />
+    * 摄像头模拟天眼<img src="README.assets/image-20230511000457926.png" alt="image-20230511000457926" style="zoom:50%;" />
     
     
     
   * 本车的现实意义
     
-    <img src="C:\Users\wxymm\Desktop\Code\Raspberry\raspberry_car\README.assets\image-20230511000518596.png" alt="image-20230511000518596" style="zoom:50%;" />
+    <img src="README.assets/image-20230511000518596.png" alt="image-20230511000518596" style="zoom:50%;" />
     
     * 这个项目受电赛的送药小车的启发，联想到过去三年的疫情。
     * 上面贴有“连花清瘟胶囊”与“新型冠状病毒测试试剂”
