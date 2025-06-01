@@ -1,5 +1,7 @@
 # raspberry_car
 
+2022-2023 山东大学泰山学堂高级程序设计课程实验
+
 ![img](README.assets/1X%24MHL2647T%5BCKUF_4%25U%5BW.jpg)
 
 ### GPIO 连接
